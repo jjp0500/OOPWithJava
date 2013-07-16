@@ -1,0 +1,60 @@
+/*
+ * 
+ * Ch2 Scanner Execises
+ * 
+ * Ch2Scanner.java
+ * 
+ */
+
+
+import java.util.*;
+
+
+public class Ch2Scanner {
+  
+	public static void main (String [] args){
+		
+		String firstName;
+		String lastName;
+		
+		Scanner scanner;
+		scanner = new Scanner(System.in);
+	
+		System.out.print("Enter your first name: ");
+		firstName = scanner.next();
+		System.out.println("Nice to meet you, " + firstName + ".");
+		
+		System.out.print("Enter your first name: ");
+		firstName = scanner.next();
+		System.out.print("Enter your last name: ");
+		lastName = scanner.next();
+		System.out.print("Your name is: " + firstName + " " + lastName + ".");
+		System.out.println("");
+		
+		String first, last;
+		
+		System.out.print("Enter your first and last name: ");
+		first = scanner.next();
+		last = scanner.next();
+	
+		System.out.println("Your name is " + first + " " + last + ".");
+		
+	/*	
+	 * 
+	 * Works on Windows Systems
+	 * 
+	 * 
+		String lineSeperator = System.getProperty("\r\n");
+		scanner.useDelimiter(lineSeperator);
+		
+		String quote;
+		
+		System.out.println("Enter your favorite quote: ");
+		quote = scanner.next();
+		
+		System.out.println("You entered: " + quote);
+		
+	*/
+	}
+
+}
