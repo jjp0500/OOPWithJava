@@ -1,0 +1,71 @@
+/*
+ * 
+ * Estimate the Pole Height
+ * File: EstimatePoleHeight.java
+ * 
+ * 
+ * Based on the formula:
+ * 
+ * 
+ * 
+ *   	        d*sin(alpha)*sin(beta)
+ * h = ----------------------------------------------
+ * 		sqrt( sin(alpha + beta)*sin(alpha - beta) )
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+import java.text.*;
+import java.util.*;
+
+public class EstimatePoleHeight {
+
+	public static void main(String [] args){
+		
+		double height;  	//height of the pole
+		double distance; 	//distance between points A and B
+		double alpha;		//angle measured at point A
+		double beta;		//angle measured at point B
+		double alphaRad;	//angle alpha in radians
+		double betaRad;		//angle beta in radians
+		
+		Scanner scanner = new Scanner(System.in);
+		scanner.useDelimiter(System.getProperty("line.separator"));
+		
+		//get three input values
+		System.out.println("Angle alpha (in degrees):");
+		alpha = scanner.nextDouble();
+		
+		System.out.println("Angle beta (in degrees):");
+		beta = scanner.nextDouble();
+		
+		System.out.println("Distance between points A and B (ft):");
+		distance = scanner.nextDouble();
+		
+		//compute height of the tower
+		alphaRad = Math.toRadians(alpha);
+		betaRad = Math.toRadians(beta);
+		
+		height = (distance * Math.sin(alphaRad) * Math.sin(betaRad))
+				/
+				(Math.sqrt(alphaRad + betaRad)*
+				Math.sin(alphaRad  - betaRad));
+		
+		DecimalFormat df = new DecimalFormat("0.000");
+		
+		System.out.println(
+				"lnln Estimating the height of the pole"
+				+"\n\n"
+				+"Angle at point A (deg):		" + df.format(alpha) 	+ "\n"
+				+"Angle at point B (deg):		" + df.format(beta)     + "\n"
+				+"Distance between A and B (ft)	" + df.format(distance) + "\n"
+				+"Estimated Height (ft):		" + df.format(height) 	+ "\n"
+				);
+		
+	}
+	
+}
