@@ -1,0 +1,66 @@
+/*
+ * 
+ * This is a sample of how to write a file using Java.
+ * It can be used to make a record or a database of txt files.
+ * 
+ * 
+ */
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+
+
+public class CreateFile {
+  
+	protected Formatter x;
+	
+	public void openFile(){
+		
+		try{
+			
+			x = new Formatter("writetofile.txt");
+			
+		}
+		
+		catch(Exception e){
+			
+			System.out.println("You have an error");
+			
+		}
+		
+	}
+
+	public void addRedcords(){
+		
+		x.format("%s%s%s", "This is how ","to create and write ","to a file!");
+		
+	}
+	public void closeFile(){
+		
+		x.close();
+		
+	}
+}
+
+/*
+ * 
+ * This is used to create and instance of CreateFile
+ * and to execute the methods therein.
+ * 
+ * 
+ */
+public class Test1 {
+
+  public static void main(String[] args) {
+		
+		CreateFile g = new CreateFile();
+		
+		g.openFile();
+		g.addRedcords();
+		g.closeFile();
+		
+	}
+	
+}
